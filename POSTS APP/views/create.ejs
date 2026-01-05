@@ -1,0 +1,287 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Post</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #0a66c2;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004182;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Create Post</h2>
+
+    <form action="/posts" method="POST">
+
+      <label>Name</label>
+      <input type="text" name="name" required />
+
+      <label>Headline</label>
+      <input type="text" name="headline" required />
+
+      <label>Company</label>
+      <input type="text" name="company" required />
+
+      <label>Post Content</label>
+      <textarea name="content" required></textarea>
+
+
+      <button type="submit">Post</button>
+    </form>
+  </div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Post</title>
+
+  <!-- Page-specific CSS -->
+   <style>/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #1e1e1e;
+  color: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== LAYOUT ===== */
+.create-wrapper {
+  width: 100%;
+  padding: 20px;
+}
+
+.create-card {
+  max-width: 560px;
+  margin: auto;
+  background: #2a2a2a;
+  border-radius: 14px;
+  padding: 30px 28px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* ===== HEADER ===== */
+.create-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  color: #f1f1f1;
+}
+
+.create-header p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+/* ===== FORM ===== */
+.create-form {
+  margin-top: 26px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #d1d5db;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: #ffffff;
+  color: #002c31;
+  border: 1px solid #3f3f3f;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6b7280;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ===== ACTIONS ===== */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 26px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+/* Primary */
+.btn.primary {
+  background: #2579ff;
+  color: #f9fafb;
+}
+
+.btn.primary:hover {
+  background: #4b5563;
+}
+
+/* Secondary */
+.btn.secondary {
+  background: transparent;
+  color: #9ca3af;
+  border: 1px solid #4b5563;
+}
+
+.btn.secondary:hover {
+  background: #1871ff;
+  color: #e5e7eb;
+}
+</style>
+  <link rel="stylesheet" href="/new.css">
+</head>
+<body>
+
+  <main class="create-wrapper">
+
+    <section class="create-card">
+      <header class="create-header">
+        <h1>Create New Post</h1>
+        <p>Share your thoughts with the community</p>
+      </header>
+
+      <form 
+        class="create-form"
+        action="/posts" 
+        method="POST"
+      >
+
+        <div class="form-group">
+          <label>Headline</label>
+          <input 
+            type="text" 
+            name="headline" 
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Company</label>
+          <input 
+            type="text" 
+            name="company" 
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Username</label>
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Post Content</label>
+          <textarea 
+            name="content" 
+            placeholder="What's on your mind?"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">
+            Publish Post
+          </button>
+
+          <a href="/posts" class="btn secondary">
+            Cancel
+          </a>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>

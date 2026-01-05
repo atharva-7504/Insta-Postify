@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post in Detail</title>
+    <link rel="stylesheet" href="/show.css">
+</head>
+<body>
+    <form action="/posts" method="get">
+    <button class="back"> < </button>
+    </form>
+    <h1>Current Post Details</h2>
+    <div class="main">
+        <h3><b>Post ID :</b><%= id %></h1>
+        <h3><b>Post Username :</b> <%= post.username %></h1>
+        <h3><b>Post Caption :</b><%= post.content %></h1>
+        <p><img src="<%= post.img %>"></p>
+    </div>
+</body>
+</html>

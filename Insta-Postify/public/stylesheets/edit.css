@@ -1,0 +1,66 @@
+body{
+    align-items: center;
+     background-color:rgba(255, 136, 0, 0.125);
+}
+h1{
+    margin-left: 550px; 
+    color: orangered;
+}
+.main{
+    height : auto;
+    width : 300px;
+    margin: 50px 550px;
+    border: 2px solid orange;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 5px 3px 4px rgb(255, 161, 55);
+    transform: scale(1.0001,1.0001);
+    background-color:rgba(255, 131, 8, 0.134);
+}
+img{
+    height:300px;
+    width:200px;
+}
+button{
+    align-items: center;
+    display: flex;
+   height: 50px;
+   width: 100px;
+   color: rgb(255, 255, 255);
+  background-color:rgb(255, 128, 0) ;
+  border-radius: 10px;
+}
+button:active{
+      background-color: rgb(255, 255, 255);
+    color: orange;
+}
+button:active {
+  background-color: rgb(255, 128, 0);
+  color: white;
+  font-weight: 700;
+  transform: scale(0.95); /* button pressed effect */
+}
+button.back{
+  height:40px;
+  width:40px;
+
+}
+button {
+  background-color: rgb(255, 255, 255);
+  /* 'size' is not a valid property; use font-size */
+  font-size: 1rem; /* changed from invalid size */
+  color: orange;
+  height: 40px; /* increased height for better visibility */
+  width: 120px;
+  border: 2px solid rgb(255, 166, 0);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:active {
+  background-color: rgb(255, 128, 0);
+  color: white;
+  font-weight: 700;
+  transform: scale(0.95); /* button pressed effect */
+}

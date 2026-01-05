@@ -1,0 +1,43 @@
+h1{
+    color:rgba(255, 134, 14, 0.864);
+    margin-left:500px
+}
+.main{
+    border: 2px orangered;
+    height:500px;
+    width:400px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+}
+img{
+    height:300px;
+    width:300px;
+}
+body{
+    background-color: #ffc59e35;
+}
+button {
+  background-color: rgb(255, 255, 255);
+  /* 'size' is not a valid property; use font-size */
+  font-size: 1rem; /* changed from invalid size */
+  color: orange;
+  height: 40px; /* increased height for better visibility */
+  width: 120px;
+  border: 2px solid rgb(255, 166, 0);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:active {
+  background-color: rgb(255, 128, 0);
+  color: white;
+  font-weight: 700;
+  transform: scale(0.95); /* button pressed effect */
+}
+.back{
+  height:40px;
+  width:40px;
+  margin-left: 45 px ;
+
+}

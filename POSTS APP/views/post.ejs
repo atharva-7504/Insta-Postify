@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Post Detail</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 15px;
+    }
+
+    .post-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #0a66c2;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+    }
+
+    .author-info h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .author-info p {
+      margin: 3px 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .post-time {
+      font-size: 13px;
+      color: #888;
+      margin-top: 5px;
+    }
+
+    .post-content {
+      margin: 20px 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .post-footer {
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-around;
+      color: #555;
+      font-weight: bold;
+    }
+
+    .post-footer span:hover {
+      color: #0a66c2;
+      cursor: pointer;
+    }
+
+    /* OTHER POSTS */
+    .other-posts h4 {
+      margin-bottom: 15px;
+    }
+
+    .other-post {
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      transition: transform 0.2s;
+    }
+
+    .other-post:hover {
+      transform: scale(1.02);
+    }
+
+    .other-post p {
+      margin: 5px 0;
+      color: #444;
+    }
+
+    .other-post small {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- MAIN POST -->
+    <div class="post-card">
+      <div class="post-header">
+        <div class="avatar">K</div>
+        <div class="author-info">
+          <h3><%= post.name %></h3>
+          <p><%= post.headline %> • <%= post.company %></p>
+          <div class="post-time"><%= post.createdAt %></div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <%= post.content %>
+      </div>
+
+      <div class="post-footer">
+        <span>👍 Like</span>
+        <span>💬 Comment</span>
+        <span>🔁 Repost</span>
+        <span>📤 Share</span>
+      </div>
+    </div>
+
+    <!-- OTHER POSTS -->
+    <div class="other-posts">
+      <h4>More posts by <%= post.name %></h4>
+
+      <div class="other-post">
+        <p>Deployed my Node.js app using Docker and AWS EC2 🚀</p>
+        <small>29 Dec 2025</small>
+      </div>
+
+      <div class="other-post">
+        <p>Understanding CI/CD pipelines made my workflow 10x better 🔧</p>
+        <small>25 Dec 2025</small>
+      </div>
+
+      <div class="other-post">
+        <p>GitHub Actions vs Jenkins — my thoughts after using both ⚖️</p>
+        <small>20 Dec 2025</small>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

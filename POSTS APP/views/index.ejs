@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <title>Posts</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #000000;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .create-btn {
+      background: #0a66c2;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .create-btn:hover {
+      background: #004182;
+      transform: scale(1.05);
+    }
+
+    .posts-container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .username {
+      color: #0a66c2;
+      margin-bottom: 8px;
+    }
+
+    .content {
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .actions a,
+    .actions button {
+      text-decoration: none;
+      border: none;
+      background: none;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .details {
+      color: #0a66c2;
+    }
+
+    .edit {
+      color: #f39c12;
+    }
+
+    .delete {
+      color: #e74c3c;
+    }
+
+    .right-actions {
+      display: flex;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📢 Posts</h1>
+
+  <div class="top-bar">
+    <form action="/posts/new" method="GET">
+      <button class="create-btn">➕ Create Post</button>
+    </form>
+  </div>
+
+  <div class="posts-container">
+    <% for (let post of posts) { %>
+      <div class="card">
+        <h3 class="username">@<%= post.name %></h3>
+
+        <p class="content">
+          <%= post.content %>
+        </p>
+
+        <div class="actions">
+          <a class="details" href="/posts/<%= post.id %>">View Details</a>
+
+          <div class="right-actions">
+            <a class="edit" href="/posts/<%= post.id %>/edit">✏️ Edit</a>
+
+            <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+              <button class="delete">🗑️ Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+</body>
+</html>

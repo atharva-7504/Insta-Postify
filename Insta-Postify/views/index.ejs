@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>InstantPostify</h1>
+    <div class="create">
+        <form action="/posts/new" method="post">
+        <button class="create"><h2>+ Create New Post</h2></button>
+        </form>
+    </div>
+    <div class="card">
+    <% for (post of posts) { %>
+            <div class="cards">
+                <form action="/posts/<%= post.id %>?_method=DELETE" method="post"><button class="delete">X</button></form>
+                <h3 class="username">@ <%= post.username %></h3>
+                <h4 class="content"> <%= post.content %> </h4>
+                <img src="<%= post.img %>" alt="some image">
+                <div class="option">
+                <form action="/posts/<%= post.id %>" method="get"><button class="show"><h3>Show details</h3></button></form>
+                <form action="/posts/<%= post.id %>/edit" method="get"><button class="edit"><h3>Edit</h3></button></form>
+                </div>
+            </div>
+    <% } %>
+    </div>
+    <br>
+</body>
+</html>
